@@ -12,7 +12,7 @@ function OTPForm() {
   const onSubmit = async (data) => {
     try {
       // Send OTP verification request to the server
-      const response = await fetch('http://localhost:5000/api/verify-otp', {
+      const response = await fetch('https://internship-assignment-1-2apo.onrender.com/api/verify-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, otp: data.otp }),

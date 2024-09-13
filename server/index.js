@@ -15,7 +15,7 @@ const _dirname=path.resolve()
 
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://internship-assignment-1-2apo.onrender.com/',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));

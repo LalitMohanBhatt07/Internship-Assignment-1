@@ -26,7 +26,7 @@ function LoginForm() {
   const onSubmit = async (data) => {
     try {
       console.log("data",data);
-      const response = await fetch('http://localhost:5000/api/signin', {
+      const response = await fetch('https://internship-assignment-1-2apo.onrender.com/api/signin', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
