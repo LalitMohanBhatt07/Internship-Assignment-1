@@ -134,5 +134,28 @@ exports.signOut = (req, res) => {
   res.status(200).json({ message: 'Sign-out successful' });
 };
 
+exports.fetchUserByEmail=async(req,res)=>{
+  try{
+    const {email}=req.body;
+    const user=await User.findOne({email});
 
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    res.status(200).json({
+      id: user._id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      contactNumber: user.contactNumber,
+      isVerified: user.isVerified,
+      createdAt: user.createdAt,
+    });
+  }
+  catch(err){
+    console.error('Error fetching user by email:', err);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+}
 
